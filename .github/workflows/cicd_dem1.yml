@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -65,7 +65,7 @@ jobs:
   integrationTest:
     needs: build
     name: Integration Tests
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:  
       - name: Register Artifact
         uses: ServiceNow/servicenow-devops-register-artifact@v1.34.2
@@ -93,7 +93,7 @@ jobs:
   deploy:
     needs: integrationTest
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:     
       - name: Custom Change
         uses: ServiceNow/servicenow-devops-change@scratch_STRY55387839
