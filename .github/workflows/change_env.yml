@@ -5,7 +5,7 @@ on: push
 jobs:
   build:
     name: Build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -22,7 +22,7 @@ jobs:
     environment: PROD
     needs: build
     name: Deployment
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Deployment 
         run: echo Run PROD deployment.
